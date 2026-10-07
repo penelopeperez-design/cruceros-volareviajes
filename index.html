@@ -7,6 +7,34 @@
       document.documentElement.classList.add("js");
     </script>
 
+    <!-- Consentimiento de cookies (Consent Mode v2): sin aceptación no se instalan cookies analíticas -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        wait_for_update: 500,
+      });
+      try {
+        if (localStorage.getItem("volare_cookies") === "aceptadas") {
+          gtag("consent", "update", { analytics_storage: "granted" });
+        }
+      } catch (error) {
+        /* sin almacenamiento disponible se mantiene el consentimiento denegado */
+      }
+    </script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KN19RN3MBS"></script>
+    <script>
+      gtag("js", new Date());
+      gtag("config", "G-KN19RN3MBS");
+    </script>
+
     <title>Cruceros 2027 desde 353 € | Venta anticipada — Volare Viajes</title>
     <meta
       name="description"
@@ -72,8 +100,8 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-BDqULFeA.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-w4FG1A2b.css">
+    <script type="module" crossorigin src="./assets/index-6QsloErJ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CYgvqv9D.css">
   </head>
 
   <body>
@@ -1333,5 +1361,29 @@
         />
       </svg>
     </a>
+    <!-- Aviso de cookies ================================================ -->
+    <div id="aviso-cookies" class="cookies" role="region" aria-label="Aviso de cookies" hidden>
+      <div class="cookies__caja">
+        <p class="cookies__texto">
+          Usamos cookies propias y de terceros para analizar cómo se utiliza esta página. Puedes
+          aceptarlas o rechazarlas; si las rechazas, seguiremos midiendo de forma agregada y sin
+          cookies.
+          <a
+            href="https://www.volareviajes.com/nhomett/legaltext/cookies/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Política de cookies</a
+          >
+        </p>
+        <div class="cookies__acciones">
+          <button type="button" id="cookies-rechazar" class="cookies__btn cookies__btn--secundario">
+            Rechazar
+          </button>
+          <button type="button" id="cookies-aceptar" class="cookies__btn cookies__btn--principal">
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
