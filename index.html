@@ -35,6 +35,40 @@
       gtag("config", "G-KN19RN3MBS");
     </script>
 
+    <!-- Píxel de Meta: solo se carga si el visitante acepta las cookies -->
+    <script>
+      window.volarePixelId = "1277476527797060";
+      window.volareCargarPixel = function () {
+        if (window.fbq) return;
+        /* Snippet oficial de Meta */
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = "2.0";
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+        window.fbq("init", window.volarePixelId);
+        window.fbq("track", "PageView");
+      };
+      try {
+        if (localStorage.getItem("volare_cookies") === "aceptadas") {
+          window.volareCargarPixel();
+        }
+      } catch (error) {
+        /* sin consentimiento no se carga el píxel */
+      }
+    </script>
+
     <title>Cruceros 2027 desde 353 € | Venta anticipada — Volare Viajes</title>
     <meta
       name="description"
@@ -100,7 +134,7 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-6QsloErJ.js"></script>
+    <script type="module" crossorigin src="./assets/index-BGeXHhUx.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CYgvqv9D.css">
   </head>
 
@@ -1365,9 +1399,9 @@
     <div id="aviso-cookies" class="cookies" role="region" aria-label="Aviso de cookies" hidden>
       <div class="cookies__caja">
         <p class="cookies__texto">
-          Usamos cookies propias y de terceros para analizar cómo se utiliza esta página. Puedes
-          aceptarlas o rechazarlas; si las rechazas, seguiremos midiendo de forma agregada y sin
-          cookies.
+          Usamos cookies propias y de terceros para analizar cómo se utiliza esta página y medir
+          nuestras campañas. Puedes aceptarlas o rechazarlas; si las rechazas, seguiremos midiendo
+          de forma agregada y sin cookies.
           <a
             href="https://www.volareviajes.com/nhomett/legaltext/cookies/"
             target="_blank"
